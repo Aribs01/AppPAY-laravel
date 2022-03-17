@@ -36,9 +36,13 @@ class AppController extends Controller
 
     public function dashboard() {
         $deposits = Deposit::all();
+        $sum = Deposit::sum('amount');
+        $count = Deposit::count('amount');
 
         return view ('dashboard', [
-            'deposits' => $deposits
+            'deposits' => $deposits,
+            'sum' => $sum,
+            'count' => $count
         ]);
     }
 

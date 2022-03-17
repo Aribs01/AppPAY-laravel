@@ -62,12 +62,34 @@
 
                                             <!-- Details -->
                                             <div class="section-flow-description">
-                                                <h3 class="section-flow-title"><a href="#">Browse Previous Deposits</a></h3>
+                                                <h3 class="section-flow-title"><a href="#">Browse Previous Deposits</a>
+                                                </h3>
+                                                <label for="Filter">Filter:</label>
+                                                <select name="Filter" id="Filter" style="width: 30%; border-style: groove">
+                                                    <option value="Last 7 days">All</option>
+                                                    <option value="Last 7 days">Last 7 days</option>
+                                                    <option value="Last 7 days">Last month</option>
+                                                    <option value="Last 7 days">this year</option>
+                                                </select>
 
                                                 <!-- Coupon Footer -->
                                                 <div class="section-flow-footer">
-                                                    <ul>
-                                                        <li><i class="icon-material-outline-access-time"></i> 12 of 50 used</li>
+                                                    <ul class="dashboard-box-list">
+                                                        @foreach ($deposits as $deposit)
+                                                            <li>
+                                                                <span class="notification-text">
+                                                                    <strong>₦ {{$deposit->amount}}</strong> 
+                                                                    Deposited 
+                                                                    <a href="#">{{$deposit->created_at->diffForHumans()}}</a>
+                                                                    
+                                                                </span>
+                                                                <span class="notification-text"> 
+                                                                    
+                                                                    <a href="/deposit/{{$deposit->id}}">View</a>
+                                                                    
+                                                                </span>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>

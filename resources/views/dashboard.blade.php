@@ -17,14 +17,14 @@
             <div class="fun-fact" data-fun-fact-color="#79C142">
                 <div class="fun-fact-text">
                     <span>Total Number of Deposits</span>
-                    <h4>10</h4>
+                    <h4>{{$count}}</h4>
                 </div>
                 <div class="fun-fact-icon"><i class="icon-feather-layers"></i></div>
             </div>
             <div class="fun-fact" data-fun-fact-color="#4F5B64">
                 <div class="fun-fact-text">
                     <span>Cash</span>
-                    <h4>500,000</h4>
+                    <h4>{{$sum}}</h4>
                 </div>
                 <div class="fun-fact-icon"><i class="icon-feather-layers"></i></div>
             </div>
